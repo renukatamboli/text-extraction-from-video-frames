@@ -9,3 +9,9 @@ and words are further segmented into character images.
 Each character image is passed to convolutional neural network (CNN) implemented using TensorFlow library. 
 The CNN is trained using custom dataset created with aforementioned segmentation process implemented using OpenCV, 
 i.e, we manually classified those segmented character images. 
+
+Requirements:
+django==2.2
+tensoflow==1.11
+ffpyplayer
+opencv
