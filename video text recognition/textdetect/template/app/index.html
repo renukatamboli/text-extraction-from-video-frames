@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html xmlns:text-color="http://www.w3.org/1999/xhtml">
+
+<head>
+  {% load static %}
+  <title>Home</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+  <link rel="stylesheet" type="text/css" href="{% static 'style/style.css'%}" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js">
+
+
+
+  <script>
+
+  $(document).ready(function(){
+  console.log("hi");
+  $('#download').click(function(){
+    console.log("hi");
+    downloadInnerHtml(fileName, 'text','text/html');
+});
+});
+
+
+function downloadInnerHtml(filename, elId, mimeType) {
+    var elHtml = document.getElementById(elId).innerHTML;
+    var link = document.createElement('a');
+    mimeType = mimeType || 'text/plain';
+    console.log("hi");
+
+    link.setAttribute('download', filename);
+    link.setAttribute('href', 'data:' + mimeType  +  ';charset=utf-8,' + encodeURIComponent(elHtml));
+    link.click();
+}
+
+var fileName =  'data.txt';
+
+  </script>
+</head>
+
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><a href="{% url 'video' %}">Video/Image<span class="logo_colour">Text Recognition</span></a></h1>
+
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+          <li class="selected"><a href="{% url 'video' %}">Home</a></li>
+          <li><a href="{% url 'UploadImage' %}">Upload Image</a></li>
+          <li><a href="{% url 'aboutus' %}">About Us</a></li>
+
+        </ul>
+      </div>
+    </div>
+    <div id="content_header"></div>
+    <div id="site_content">
+      <div class="sidebar">
+        <h2><b>Controls</b></h2>
+        <h3><b>P/p: </b><span>To play the video </span></h3>
+        <h3><b>S/s: </b><span color="black">To pause the video</span></h3>
+        <h3>To forward the video,first pause it and then move the trackbar to desired location and play it again.</h3>
+
+
+
+
+
+      </div>
+      <div id="content">
+        <form action="" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <br>
+          <div class="form_settings">
+            <p><span><b>Youtube url</b></span><input class="contact" type="text" name="youtubeurl" value="" /></p>
+
+            <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="y_submitted" value="PLAY" /></p>
+          </div>
+        </form>
+
+
+        <br/>
+        <center><h2>OR</h2></center>
+
+        <br>
+
+        <form action="" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="form_settings">
+            <p><span><b>Upload Video</b></span><input class="contact" type="file" name="video" value="" accept="video/*" /></p>
+            <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="v_submitted" value="PLAY" /></p>
+          </div>
+        </form>
+
+
+        <br><br>
+        <h2><b>Converted Text : </b></h2>
+
+
+              <p><span></span><textarea rows="10" cols="70" name="name" id="text">{{ data }}</textarea></p>
+       <!-- <a href="#" id="download">Download</a>-->
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>

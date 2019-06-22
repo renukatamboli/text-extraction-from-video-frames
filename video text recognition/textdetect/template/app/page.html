@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  {% load static %}
+  <title>About Us</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+ <link rel="stylesheet" type="text/css" href="{% static 'style/style.css'%}" />
+</head>
+
+
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+
+           <h1><a href="{% url 'video' %}">Video/Image<span class="logo_colour">Text Recognition</span></a></h1>
+
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+
+           <li><a href="{% url 'video' %}">Home</a></li>
+          <li ><a href="{% url 'UploadImage' %}">Examples</a></li>
+          <li  class="selected"><a href="{% url 'aboutus' %}">About Project</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="content_header"></div>
+    <div id="site_content">
+      <div class="sidebar">
+
+      </div>
+      <div id="content">
+
+        <h2>About Project </h2>
+        <p>
+          Now a days,there are many online education platforms for distance education worldwide that conduct correspondence
+          courses.Theses courses are highly in the form of Video Tutorials or live streaming video lectures.Generally,we
+          need to take notes manually with pen and paper from these streaming video lectures/tutorials or any other video
+          source if pdf tutorial is not available for that video.Here our aim is to create an application to take notes from
+          video sources ,digitally.User can play the video by inserting youtube video link or by uploading video from local
+          storage.User can also upload simple text image.In the application,user can select paragraph,code,useful definition
+          (region of interest) from streaming video or uploaded image.After selection of region of interest from video/image,text
+          document for corresponding image/frame will be available for user.
+        </p>
+        </br></br>
+      </div>
+      </div>
+    </div>
+
+
+</body>
+</html>

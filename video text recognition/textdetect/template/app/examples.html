@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  {% load static %}
+  <title>Upload Image</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+  <link rel="stylesheet" type="text/css" href="{% static 'style/style.css'%}" />
+</head>
+
+
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><a href="{% url 'video' %}">Video/Image<span class="logo_colour">Text Recognition</span></a></h1>
+
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+          <li><a href="{% url 'video' %}">Home</a></li>
+          <li  class="selected"><a href="{% url 'UploadImage' %}">Examples</a></li>
+          <li><a href="{% url 'aboutus' %}">About Project</a></li>
+
+        </ul>
+      </div>
+    </div>
+    <div id="content_header"></div>
+    <div id="site_content">
+      <div class="sidebar">
+
+
+        </ul>
+
+        </form>
+      </div>
+      <div id="content">
+        <form action="" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="form_settings">
+            <p><span><b>Upload Image</b></span><input class="contact" type="file" name="image" value="" accept="image/*" /></p>
+            <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="v_submitted" value="Submit" /></p>
+          </div>
+        </form>
+
+          <br><br>
+          <h2>Converted Text</h2>
+          <form action="" method="post" enctype="multipart/form-data">
+              <p><span></span><textarea rows="10" cols="50" name="name">{{ data }}</textarea></p>
+              <!--<p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="d_submitted" value="Download" /></p>
+11-->
+          </form>
+
+
+
+
+      </div>
+    </div>
+
+</body>
+</html>
