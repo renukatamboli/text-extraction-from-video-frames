@@ -8,7 +8,7 @@ from ffpyplayer.player import MediaPlayer
 from tensorflow.keras.models import Sequential, load_model
 
 
-d=r'C:/Users/Admin/Desktop/image processing/test3'
+d=r'path/to/project/files/'
 directory=str(d)+'/media/output/wordfiles/'
 waitTime = 40
 rect = (0,0,0,0)
