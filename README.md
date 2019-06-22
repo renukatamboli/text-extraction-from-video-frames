@@ -11,7 +11,7 @@ The CNN is trained using custom dataset created with aforementioned segmentation
 i.e, we manually classified those segmented character images. 
 
 Requirements:
-django==2.2
-tensoflow==1.11
-ffpyplayer
+django==2.2,
+tensoflow==1.11,
+ffpyplayer,
 opencv
